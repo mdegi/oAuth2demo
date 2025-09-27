@@ -9,6 +9,8 @@ import java.security.Principal;
 @RestController
 public class ApplicationController {
 
+    //Some test comment
+    
     @RequestMapping(value = "/publicpage")
     public String publicPage() {
         return "<html><br/>Hello you have entered a Public page successfully</html>";
@@ -27,3 +29,4 @@ public class ApplicationController {
     }
 
 }
+
