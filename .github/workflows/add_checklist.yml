@@ -1,15 +1,23 @@
 name: Add review checklist
 on:
-  pull_request_target:
+  pull_request:
     types: [opened]
+    branches: [main]
 permissions:
   pull-requests: write
 jobs:
   add-review-checklist:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug environment
+        run: |
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Token available: ${{ secrets.GITHUB_TOKEN != '' }}"
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Add review checklist
         uses: trixi-framework/add-pr-review-checklist@v1
         with:
