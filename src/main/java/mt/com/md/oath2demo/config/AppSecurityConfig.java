@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableOAuth2Sso
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //test
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -27,3 +28,4 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
+
